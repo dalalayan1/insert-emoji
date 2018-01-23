@@ -4,22 +4,37 @@ export default class Header extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			inputVal: ''
+			inputValue: '',
+			insertSmiley: false
 		};
 	}
 
 	updateVal = (evt) => {
-		this.setState({
-			inputVal: this.refs.inputVal.value
-		});
+
+		if(this.state.insertSmiley) {
+			this.setState({
+				insertSmiley: true
+			});
+		}
+
+		let val = evt && evt.target && evt.target.innerText;
+
+		if(val.indexOf(';)') !== -1) {
+			this.setState({
+				insertSmiley: true
+			});
+		}
 	}
 
 	render(){
 		return( 
 			<div className="main-component">
 				<h2>Insert Emoji</h2>
-				<input ref="inputVal" onChange={(e) => this.updateVal(e)}/>
-				<div className="custom-input">{this.state.inputVal}</div>
+				<div className="custom-input" contentEditable="true" onKeyUp={(e) => this.updateVal(e)}>
+					{
+						this.state.insertSmiley && <img src='/src/img/blink.jpg' />
+					}
+				</div>
 			</div>
 		);
 	}
