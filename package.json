@@ -1,0 +1,43 @@
+{
+  "name": "react-app",
+  "version": "0.0.1",
+  "description": "reactPractise",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "webpack-dev-server --content-base",
+    "build": "npm run build:webpack && npm run server",
+    "build:webpack": "npm run clean && webpack --config webpack.config.prod.js",
+    "server": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.7.2",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-plugin-transform-decorators-legacy": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-0": "*",
+    "css-loader": "*",
+    "express": "*",
+    "html-webpack-plugin": "*",
+    "jsx-loader": "*",
+    "less-loader": "*",
+    "open": "*",
+    "sass-loader": "*",
+    "style-loader": "*",
+    "stylelint": "^8.4.0",
+    "stylelint-webpack-plugin": "*",
+    "webpack": "*",
+    "webpack-dev-server": "*",
+    "webpack-eslint-plugin": "*",
+    "webpack-hot-middleware": "*"
+  }
+}
