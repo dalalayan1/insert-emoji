@@ -1,6 +1,5 @@
-# react-sample-app
-A sample app to show working of react with webpack.</br>
-Has support for both sass & less.
+# Insert EMOJI
+Type smileys in the input field, and get images.
 
 ## commands to run the app
 
